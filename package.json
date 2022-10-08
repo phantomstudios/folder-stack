@@ -1,0 +1,34 @@
+{
+  "name": "folder-stack",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "depcheck": "npx npm-check --update",
+    "lint": "npm run check-types && next lint",
+    "fix": "next lint --fix",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "12.3.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.8.3",
+    "@types/react": "18.0.21",
+    "@types/react-dom": "18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
+    "@typescript-eslint/parser": "^5.39.0",
+    "eslint": "8.25.0",
+    "eslint-config-next": "^12.3.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^3.5.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
+    "typescript": "4.8.4"
+  }
+}

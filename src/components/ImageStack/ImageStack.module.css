@@ -1,0 +1,36 @@
+@keyframes slitherIn {
+  from {
+    opacity: 0;
+    max-height: 0px;
+    margin-bottom: 0px;
+  }
+  to {
+    opacity: 1;
+    max-height: 100vh;
+    margin-bottom: 16px;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 16px;
+  list-style: none;
+}
+
+.list li {
+  width: 100%;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  animation-name: slitherIn;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+
+.list li img {
+  display: block;
+  width: 100%;
+}
