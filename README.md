@@ -22,8 +22,16 @@ You can configure a few things by editing the file `src/config/index.tsx`.
 - `FILE_EXTENSION` - The filetypes supported. Default `png`.
 - `FILE_MIME` - The file mime type. Default `image/png`.
 - `SHOW_TITLE` - If the title should be overlaid. Default `true`.
-- `MAX_WIDTH` - The maximum width of the image column. Default `256`.
-- `ROTATE` - If the view should be rotated 90 to the right. Default `true`.
-- `BLOCK_LEFT` - How much of the left of the screen should be blocked. Default `640`.
+- `STACK_TRANSFORM` - How the stack should be positioned on the page. Default shown below.
+
+```ts
+export const STACK_TRANSFORM = {
+  x: "100%",
+  y: 0,
+  width: 256,
+  height: 1265,
+  rotation: 90,
+};
+```
 
 You can also adjust the title field formatter here: `src/utils/images.ts`.

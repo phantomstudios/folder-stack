@@ -1,0 +1,8 @@
+.main {
+  display: block;
+  position: absolute;
+  z-index: 100px;
+  overflow: hidden;
+  transform-origin:top left;
+  width: 100%;
+}
