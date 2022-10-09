@@ -21,3 +21,6 @@ You can configure a few things by editing the file `src/config/index.tsx`.
 - `POLL_INTERVAL` - How often should the frontend look for updates. Default 5 seconds.
 - `FILE_EXTENSION` - The filetypes supported. Default `png`.
 - `FILE_MIME` - The file mime type. Default `image/png`.
+- `SHOW_TITLE` - If the title should be overlaid. Default `true`.
+
+You can also adjust the title field formatter here: `src/utils/images.ts`.
