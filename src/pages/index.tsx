@@ -5,7 +5,10 @@ import Head from "next/head";
 import type { NextPage } from "next";
 
 import useImages from "@/hooks/useImages";
+import { ROTATE } from "@/config";
+import { Rotator } from "@/components/Rotator";
 import { ImageStack } from "@/components/ImageStack";
+import { BottomBlocker } from "@/components/BottomBlocker";
 
 const Home: NextPage = () => {
   const images = useImages();
@@ -14,12 +17,17 @@ const Home: NextPage = () => {
     target: fullscreenContainerRef,
   });
   return (
-    <div ref={fullscreenContainerRef} onClick={toggleFullscreen}>
+    <>
       <Head>
         <title>Phantom Diffusion</title>
       </Head>
-      <ImageStack images={images} />
-    </div>
+      <div ref={fullscreenContainerRef} onClick={toggleFullscreen}>
+        <Rotator rotate={ROTATE}>
+          <ImageStack images={images} />
+        </Rotator>
+        <BottomBlocker />
+      </div>
+    </>
   );
 };
 
