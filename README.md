@@ -22,5 +22,6 @@ You can configure a few things by editing the file `src/config/index.tsx`.
 - `FILE_EXTENSION` - The filetypes supported. Default `png`.
 - `FILE_MIME` - The file mime type. Default `image/png`.
 - `SHOW_TITLE` - If the title should be overlaid. Default `true`.
+- `MAX_WIDTH` - The maximum width of the image column. Default `320`.
 
 You can also adjust the title field formatter here: `src/utils/images.ts`.
