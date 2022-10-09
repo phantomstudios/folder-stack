@@ -3,7 +3,7 @@ import fs from "fs";
 
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { DIR } from "@/config";
+import { DIR, FILE_MIME } from "@/config";
 
 type QueryData = {
   image: string;
@@ -25,7 +25,7 @@ export default async function handler(
   const stat = fs.statSync(filePath);
 
   res.writeHead(200, {
-    "Content-Type": "image/png",
+    "Content-Type": FILE_MIME,
     "Content-Length": stat.size,
   });
 

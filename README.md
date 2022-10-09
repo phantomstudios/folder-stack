@@ -19,3 +19,5 @@ You can configure a few things by editing the file `src/config/index.tsx`.
 - `DIR` - The directory to watch.
 - `MAX_IMAGES` - How many images to request. Default 10.
 - `POLL_INTERVAL` - How often should the frontend look for updates. Default 5 seconds.
+- `FILE_EXTENSION` - The filetypes supported. Default `png`.
+- `FILE_MIME` - The file mime type. Default `image/png`.
