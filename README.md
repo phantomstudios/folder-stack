@@ -22,6 +22,7 @@ You can configure a few things by editing the file `src/config/index.tsx`.
 - `FILE_EXTENSION` - The filetypes supported. Default `png`.
 - `FILE_MIME` - The file mime type. Default `image/png`.
 - `SHOW_TITLE` - If the title should be overlaid. Default `false`.
+- `DISABLE_SCROLL` - Should the user be able to scroll? Default `true`.
 - `STACK_TRANSFORM` - How the stack should be positioned on the page. Default shown below.
 
 ```ts
