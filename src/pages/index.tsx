@@ -20,7 +20,11 @@ const Home: NextPage = () => {
       <Head>
         <title>Phantom Diffusion</title>
       </Head>
-      <div ref={fullscreenContainerRef} onClick={toggleFullscreen}>
+      <div
+        ref={fullscreenContainerRef}
+        onClick={toggleFullscreen}
+        id="container"
+      >
         <Positioner {...STACK_TRANSFORM}>
           <ImageStack images={images} />
         </Positioner>
