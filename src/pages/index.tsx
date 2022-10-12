@@ -1,11 +1,11 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import { useFullscreen } from "rooks";
 import Head from "next/head";
 import type { NextPage } from "next";
 
 import useImages from "@/hooks/useImages";
-import { STACK_TRANSFORM } from "@/config";
+import { DISABLE_SCROLL, STACK_TRANSFORM } from "@/config";
 import { Positioner } from "@/components/Positioner";
 import { ImageStack } from "@/components/ImageStack";
 
@@ -15,6 +15,16 @@ const Home: NextPage = () => {
   const { toggleFullscreen } = useFullscreen({
     target: fullscreenContainerRef,
   });
+
+  useEffect(() => {
+    if (!DISABLE_SCROLL) return;
+    const old = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = old;
+    };
+  }, []);
+
   return (
     <>
       <Head>

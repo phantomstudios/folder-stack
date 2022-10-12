@@ -5,6 +5,7 @@ export const RETRY_INTERVAL = 10 * 1000;
 export const FILE_EXTENSION = "png";
 export const FILE_MIME = "image/png";
 export const SHOW_TITLE = false;
+export const DISABLE_SCROLL = true;
 
 export const STACK_TRANSFORM = {
   x: "100%",
