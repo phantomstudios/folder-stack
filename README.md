@@ -17,7 +17,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can configure a few things by editing the file `src/config/index.tsx`.
 
 - `DIR` - The directory to watch.
-- `MAX_IMAGES` - How many images to request. Default 10.
+- `RECURSIVE` - Should we scan recursively within folders. Default is `true`.
+- `MAX_IMAGES` - How many images to request. Default `10`.
 - `POLL_INTERVAL` - How often should the frontend look for updates. Default 5 seconds.
 - `RETRY_INTERVAL` - How frequently should the frontend retry polling on failure.
 - `FILE_EXTENSION` - The filetypes supported. Default `png`.
