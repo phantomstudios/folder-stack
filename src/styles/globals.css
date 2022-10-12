@@ -5,6 +5,10 @@ body {
   overflow: hidden;
 }
 
+body:fullscreen {
+  cursor: none;
+}
+
 a {
   color: inherit;
   text-decoration: none;
