@@ -22,7 +22,6 @@
 
 .list {
   display: flex;
-  transform-origin:top left;
   flex-direction: column;
   overflow: hidden;
   margin: 0;

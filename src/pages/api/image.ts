@@ -1,5 +1,5 @@
-import path from "path";
-import fs from "fs";
+import { join } from "path";
+import { createReadStream, statSync } from "fs";
 
 import type { NextApiRequest, NextApiResponse } from "next";
 import mime from "mime";
@@ -22,9 +22,9 @@ export default async function handler(
   const query = req.query as QueryData;
   const { image } = query;
 
-  const filePath = path.join(ROOT_DIRECTORY, image);
+  const filePath = join(ROOT_DIRECTORY, image);
 
-  const stat = fs.statSync(filePath);
+  const stat = statSync(filePath);
   const mimeType = mime.getType(filePath);
 
   res.writeHead(200, {
@@ -32,7 +32,7 @@ export default async function handler(
     "Content-Length": stat.size,
   });
 
-  const readStream = fs.createReadStream(filePath);
+  const readStream = createReadStream(filePath);
 
   await readStream.pipe(res);
 }

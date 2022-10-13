@@ -12,6 +12,7 @@ export const DISABLE_SCROLL = true;
 
 export const STACK_STYLE: CSSProperties = {
   position: "absolute",
+  transformOrigin: "top left",
   left: "100%",
   top: 0,
   width: 256,
