@@ -6,8 +6,7 @@ import type { NextPage } from "next";
 
 import useScrollLock from "@/hooks/useScrollLock";
 import useImages from "@/hooks/useImages";
-import { DISABLE_SCROLL, STACK_TRANSFORM } from "@/config";
-import { Positioner } from "@/components/Positioner";
+import { DISABLE_SCROLL, STACK_STYLE } from "@/config";
 import { ImageStack } from "@/components/ImageStack";
 
 const Home: NextPage = () => {
@@ -25,9 +24,7 @@ const Home: NextPage = () => {
         <title>Folder Stack</title>
       </Head>
       <div ref={fullscreenContainerRef} onClick={toggleFullscreen}>
-        <Positioner {...STACK_TRANSFORM}>
-          <ImageStack images={images} />
-        </Positioner>
+        <ImageStack style={STACK_STYLE} images={images} />
       </div>
     </>
   );

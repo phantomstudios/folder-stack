@@ -22,11 +22,13 @@
 
 .list {
   display: flex;
+  transform-origin:top left;
   flex-direction: column;
-  width: 100%;
+  overflow: hidden;
   margin: 0;
   padding: 16px;
   list-style: none;
+  z-index: 100px;
 }
 
 .list li {
