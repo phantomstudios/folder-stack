@@ -36,7 +36,7 @@ export default async function handler(
         time: stat.mtime.getTime(),
       };
     })
-    // Sort by most recent
+    // Sort by most recent, then filter by filename
     .sort((a, b) => {
       if (a.time === b.time) {
         if (a.name < b.name) return 1;

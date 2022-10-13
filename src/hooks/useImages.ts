@@ -12,6 +12,7 @@ const useImages = () => {
       setImages(json.images);
       setTimeout(() => getImages(), POLL_INTERVAL);
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error(error);
       setTimeout(() => {
         getImages();
