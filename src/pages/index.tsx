@@ -11,12 +11,12 @@ import { ImageStack } from "@/components/ImageStack";
 
 const Home: NextPage = () => {
   const images = useImages();
+  useScrollLock(DISABLE_SCROLL);
+
   const fullscreenContainerRef = useRef<HTMLDivElement>(null);
   const { toggleFullscreen } = useFullscreen({
     target: fullscreenContainerRef,
   });
-
-  useScrollLock(DISABLE_SCROLL);
 
   return (
     <>
