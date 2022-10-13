@@ -12,6 +12,7 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "mime": "^3.0.0",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -19,12 +20,13 @@
     "rooks": "^7.4.0"
   },
   "devDependencies": {
-    "@types/node": "18.8.3",
+    "@types/mime": "^3.0.1",
+    "@types/node": "^18.8.5",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
     "@types/recursive-readdir": "^2.2.1",
-    "@typescript-eslint/eslint-plugin": "^5.39.0",
-    "@typescript-eslint/parser": "^5.39.0",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
     "eslint": "8.25.0",
     "eslint-config-next": "^12.3.1",
     "eslint-config-prettier": "^8.5.0",
