@@ -1,9 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 import { useFullscreen } from "rooks";
 import Head from "next/head";
 import type { NextPage } from "next";
 
+import useScrollLock from "@/hooks/useScrollLock";
 import useImages from "@/hooks/useImages";
 import { DISABLE_SCROLL, STACK_TRANSFORM } from "@/config";
 import { Positioner } from "@/components/Positioner";
@@ -16,19 +17,12 @@ const Home: NextPage = () => {
     target: fullscreenContainerRef,
   });
 
-  useEffect(() => {
-    if (!DISABLE_SCROLL) return;
-    const old = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = old;
-    };
-  }, []);
+  useScrollLock(DISABLE_SCROLL);
 
   return (
     <>
       <Head>
-        <title>Phantom Diffusion</title>
+        <title>Folder Stack</title>
       </Head>
       <div ref={fullscreenContainerRef} onClick={toggleFullscreen}>
         <Positioner {...STACK_TRANSFORM}>

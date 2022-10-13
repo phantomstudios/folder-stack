@@ -2,8 +2,9 @@ import path from "path";
 import fs from "fs";
 
 import type { NextApiRequest, NextApiResponse } from "next";
+import mime from "mime";
 
-import { DIR, FILE_MIME } from "@/config";
+import { ROOT_DIRECTORY } from "@/config";
 
 type QueryData = {
   image: string;
@@ -21,11 +22,13 @@ export default async function handler(
   const query = req.query as QueryData;
   const { image } = query;
 
-  const filePath = path.join(DIR, image);
+  const filePath = path.join(ROOT_DIRECTORY, image);
+
   const stat = fs.statSync(filePath);
+  const mimeType = mime.getType(filePath);
 
   res.writeHead(200, {
-    "Content-Type": FILE_MIME,
+    "Content-Type": mimeType || "application/octet-stream",
     "Content-Length": stat.size,
   });
 

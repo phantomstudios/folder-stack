@@ -1,10 +1,15 @@
-import path from "path";
-import fs from "fs";
+import { join, relative, extname } from "path";
+import { readdirSync, statSync } from "fs";
 
 import recursive from "recursive-readdir";
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { DIR, FILE_EXTENSION, MAX_IMAGES, RECURSIVE } from "@/config";
+import {
+  ROOT_DIRECTORY,
+  FILE_EXTENSIONS,
+  MAX_IMAGES,
+  RECURSIVE,
+} from "@/config";
 
 type Data = {
   images: string[];
@@ -18,35 +23,40 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   const files = RECURSIVE
-    ? await recursive(DIR)
-    : (await fs.promises.readdir(DIR)).map((f) => path.join(DIR, f));
+    ? await recursive(ROOT_DIRECTORY)
+    : readdirSync(ROOT_DIRECTORY).map((f) => join(ROOT_DIRECTORY, f));
 
   const now = new Date().getTime();
 
   const images = files
     .map((fileName) => {
-      const stat = fs.statSync(fileName);
+      const stat = statSync(fileName);
       return {
-        name: path.relative(DIR, fileName),
+        name: relative(ROOT_DIRECTORY, fileName),
         time: stat.mtime.getTime(),
       };
     })
+    // Sort by most recent
     .sort((a, b) => {
-      return a.time - b.time;
+      if (a.time === b.time) {
+        if (a.name < b.name) return 1;
+        if (a.name > b.name) return -1;
+        return 0;
+      }
+      return b.time - a.time;
     })
-    .filter(
-      (f) =>
-        path.extname(f.name).toLowerCase() ===
-        `.${FILE_EXTENSION}`.toLowerCase()
+    // Filter by file extension
+    .filter((f) =>
+      FILE_EXTENSIONS.includes(extname(f.name).replace(".", "").toLowerCase())
     )
+    // Filter by minimum time difference
     .filter((f) => {
       const diff = now - f.time;
       return diff > MIN_DIFF;
     })
-    .reverse()
-    .map((f) => {
-      return f.name;
-    });
+    // Output only the file name
+    .map((f) => f.name);
 
+  // Limit to MAX_IMAGES
   res.status(200).json({ images: images.slice(0, MAX_IMAGES) });
 }
