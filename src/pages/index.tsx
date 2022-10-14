@@ -24,7 +24,9 @@ const Home: NextPage = () => {
         <title>Folder Stack</title>
       </Head>
       <div ref={fullscreenContainerRef} onClick={toggleFullscreen}>
-        <ImageStack style={STACK_STYLE} images={images} />
+        <div style={STACK_STYLE}>
+          <ImageStack images={images} />
+        </div>
       </div>
     </>
   );
