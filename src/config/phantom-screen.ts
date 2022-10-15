@@ -1,8 +1,9 @@
+import { join } from "path";
+
 import { CSSProperties } from "react";
 
-// Sample configuration for the `stairs/wall screen` at Phantom
-
-export const ROOT_DIRECTORY = `${process.cwd()}/samples`; // Can be absolute or relative to the project root
+// Basic scrollable column of images
+export const ROOT_DIRECTORY = join(process.cwd(), "samples");
 export const RECURSIVE = true;
 export const MAX_IMAGES = 8;
 export const POLL_INTERVAL = 5 * 1000; // 5 seconds

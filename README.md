@@ -14,7 +14,7 @@ This is a small [Next.js](https://nextjs.org/) fullstack app that allows you to 
 First, clone the repository and install the dependencies:
 
 ```bash
-npm run i
+npm i
 ```
 
 Then, run the development server:
