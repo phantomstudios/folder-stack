@@ -16,7 +16,7 @@
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "recursive-readdir": "^2.2.2",
+    "recursive-readdir": "^2.2.3",
     "rooks": "^7.4.0"
   },
   "devDependencies": {
