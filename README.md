@@ -1,3 +1,5 @@
+## IMPORTANT NOTE: THIS REPOSITORY IS BEING DEPRECATED, PLEASE REACH OUT TO US [ON EMAIL](mailto:josua@phantom.agency) IF YOU WISH TO TAKE THIS REPOSITORY OVER.
+
 <h1 align="center">Folder Stack</h1>
 <p align="center">
   A slick way to watch folders on big screens.
